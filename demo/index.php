@@ -15,10 +15,8 @@ $app->register(new Silex\Provider\TwigServiceProvider(), [
 ]);
 
 $app->get('/', function () use ($app) {
-    $response = ($app['apiClient'])->request('GET', 'http://api.service.consul');
-    /**
-     * @var \GuzzleHttp\Psr7\Response $response
-     */
+
+    $response = ($app['apiClient'])->request('GET', $app['parameters']['dateApiService']);
     $date = json_decode($response->getBody()->getContents());
 
     return $app['twig']->render('demo.twig', [

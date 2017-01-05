@@ -16,4 +16,4 @@ services:
     networks:
       default:
         aliases:
-         - api.service.consul
+         - date.service.dev
