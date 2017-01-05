@@ -1,0 +1,5 @@
+---
+{{$environment := env "ENV"}}
+{{$tree_name := printf "config/%s/docker-demo" $environment}}
+
+{{ tree $tree_name | explode | toYAML }}
