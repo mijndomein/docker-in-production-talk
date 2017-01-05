@@ -1,7 +1,6 @@
 <?php
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
