@@ -9,6 +9,10 @@ services:
       dockerfile: Dockerfile-dev
     ports:
       - 3050:80
+    labels:
+      - "traefik.backend=demo"
+      - "traefik.port=80"
+      - "traefik.frontend.rule=Host:demo.mijndomein.nl;"
 
   docker-demo-api:
     ports:
@@ -17,3 +21,5 @@ services:
       default:
         aliases:
          - date.service.dev
+    labels:
+      - "traefik.enable=false"
