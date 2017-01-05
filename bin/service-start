@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cp demo/config/parameters.default.yml demo/config/parameters.yml
+
 bin/composer install
 
 docker-compose \
