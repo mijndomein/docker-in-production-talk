@@ -1,0 +1,5 @@
+FROM mijndomein/docker-demo:base
+
+COPY demo/config /var/www/app/demo/config
+COPY demo/api.php /var/www/app/demo/index.php
+COPY vendor/ /var/www/app/vendor

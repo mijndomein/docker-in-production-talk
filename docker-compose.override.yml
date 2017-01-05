@@ -9,3 +9,11 @@ services:
       dockerfile: Dockerfile-dev
     ports:
       - 3050:80
+
+  docker-demo-api:
+    ports:
+      - 3051:80
+    networks:
+      default:
+        aliases:
+         - date.service.dev
