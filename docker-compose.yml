@@ -6,6 +6,8 @@ services:
     build:
       context: docker/base
     image: mijndomein/docker-demo:base
+    labels:
+      - "traefik.enable=false"
 
   docker-demo:
     depends_on:
@@ -23,6 +25,8 @@ services:
       context: .
       dockerfile: Dockerfile-api
     image: mijndomein/docker-demo-api:latest
+    labels:
+      - "traefik.enable=false"
 
   docker-demo-build:
     depends_on:
@@ -34,3 +38,18 @@ services:
     volumes:
       - .:/var/www/app
       - ~/.composer:/var/www/.composer
+    labels:
+      - "traefik.enable=false"
+
+  traefik:
+    container_name: traefik-demo
+    image: traefik
+    command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /dev/null:/traefik.toml
+    labels:
+      - "traefik.enable=false"

@@ -3,3 +3,4 @@ parameters:
   title: hello world
   subTitle: demo
   dateApiService: http://date.service.dev
+  healthy: true
