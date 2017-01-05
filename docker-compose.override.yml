@@ -2,5 +2,10 @@ version: '2'
 
 services:
   docker-demo:
+    volumes:
+        - ./demo:/var/www/app/demo
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
     ports:
       - 3050:80
