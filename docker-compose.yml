@@ -15,6 +15,15 @@ services:
       context: .
     image: mijndomein/docker-demo:latest
 
+  docker-demo-api:
+    depends_on:
+      - docker-demo-base
+    container_name: docker-demo-api
+    build:
+      context: .
+      dockerfile: Dockerfile-api
+    image: mijndomein/docker-demo-api:latest
+
   docker-demo-build:
     depends_on:
       - docker-demo-base

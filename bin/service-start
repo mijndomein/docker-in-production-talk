@@ -4,4 +4,8 @@ bin/composer install
 
 docker-compose \
     -p demo \
+    up -d --build docker-demo-api
+
+docker-compose \
+    -p demo \
     up --build docker-demo
