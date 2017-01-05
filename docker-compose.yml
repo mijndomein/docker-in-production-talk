@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  docker-demo-base:
+    container_name: docker-demo-base
+    build:
+      context: docker/base
+    image: mijndomein/docker-demo:base
+
+  docker-demo:
+    depends_on:
+      - docker-demo-base
+    container_name: docker-demo
+    build:
+      context: .
+    image: mijndomein/docker-demo:latest
+
+  docker-demo-build:
+    depends_on:
+      - docker-demo-base
+    container_name: docker-demo-build
+    build:
+      context: docker/build
+    image: mijndomein/docker-demo:build
+    volumes:
+      - .:/var/www/app
+      - ~/.composer:/var/www/.composer

@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Demo docker in production</title>
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #6b2fad;
+        }
+        h1 {
+            float: left;
+            display: block;
+            margin-top: calc(150px - 30px);
+            width: 100%;
+            text-align: center;
+            height: 90px;
+            color: #e66700;
+            font-size: 60px;
+        }
+        h3 {
+            float: left;
+            display: block;
+            margin-top: 20px;
+            margin-left: 40%;
+            text-align: center;
+            height: 20px;
+            color: #ffffff;
+            font-size: 40px;
+        }
+        .md-white-block {
+            float: left;
+            display: block;
+            margin-top: calc(500px - 150px);
+            height: 300px;
+            width: 60%;
+            background-color: #ffffff;
+        }
+        .md-orange-block {
+            float: left;
+            display: block;
+            margin-left: 15%;
+            height: 75px;
+            width: 60%;
+            background-color: #e66700;
+        }
+    </style>
+</head>
+<body>
+<div class="md-white-block">
+    <h1>
+        {{ title }}
+    </h1>
+</div>
+<div class="md-orange-block">
+    <h3>
+        {{ subTitle }}
+    </h3>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#
+# Runs commands in container.
+#
+# Can be used tools like composer, phpunit etc. on the exact same software versions as the application itself runs on.
+
+# Build container
+if [ "$1" == "--rebuild" ]; then
+    docker-compose -p demo build docker-demo-base
+    docker-compose -p demo build docker-demo-build
+    exit
+fi
+
+# Run command under current user
+docker-compose -p demo run --rm docker-demo-build "$@"

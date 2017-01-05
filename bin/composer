@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Can be used as a shortcut to run composer in the build container
+
+bin/run-command-in-build-container composer "$@"

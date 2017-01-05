@@ -1,0 +1,25 @@
+{
+    "name": "mijndomein/talk-docker",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Roy Bauweraerts",
+            "email": "roy.bauweraerts@mdmail.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Mijndomein\\": "src/"
+        }
+    },
+    "require": {
+        "silex/silex": "^2.0",
+        "twig/twig": "^1.30"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

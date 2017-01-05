@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  docker-demo:
+    ports:
+      - 3050:80
+    image: mijndomein/docker-demo:dev

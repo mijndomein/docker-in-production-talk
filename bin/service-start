@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+bin/composer install
+
+docker-compose \
+    -p demo \
+    up --build docker-demo

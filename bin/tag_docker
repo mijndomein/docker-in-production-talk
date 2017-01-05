@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [ -z $1 ]; then
+    echo "You must define a tag"
+    exit 1
+fi
+
+export TAG=$1;
+
+docker-compose -f docker-compose.yml -p mijndomein up -d --build docker-demo
+docker tag mijndomein/docker-demo:latest mijndomein/docker-demo:${TAG}
+docker push mijndomein/docker-demo:${TAG}
+
+
