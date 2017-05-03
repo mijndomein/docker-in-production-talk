@@ -1,5 +1,13 @@
 FROM mijndomein/docker-demo:base
 
-COPY demo/config /var/www/app/demo/config
+COPY demo/ /var/www/app/demo
 COPY demo/api.php /var/www/app/demo/index.php
 COPY vendor/ /var/www/app/vendor
+COPY var/consul/config /etc/consul-template.conf.d
+COPY var/consul/template var/consul/template
+
+RUN chown -R www-data:www-data /var/www/app/demo
+
+USER www-data
+
+CMD /usr/local/bin/consul-template -config /etc/consul-template.conf.d

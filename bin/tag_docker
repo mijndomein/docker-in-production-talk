@@ -7,9 +7,12 @@ fi
 
 export TAG=$1;
 
-docker-compose -f docker-compose.yml -p demo up -d --build docker-demo-api
-docker push mijndomein/docker-demo-api:latest
+docker-compose -f docker-compose.yml -p demo up -d --build docker-demo-ui
+docker tag mijndomein/docker-demo-ui:latest mijndomein/docker-demo-ui:${TAG}
+docker push mijndomein/docker-demo-ui:latest
+docker push mijndomein/docker-demo-ui:${TAG}
 
-docker-compose -f docker-compose.yml -p demo up -d --build docker-demo
-docker tag mijndomein/docker-demo:latest mijndomein/docker-demo:${TAG}
-docker push mijndomein/docker-demo:${TAG}
+docker-compose -f docker-compose.yml -p demo up -d --build docker-demo-api
+docker tag mijndomein/docker-demo-api:latest mijndomein/docker-demo-api:${TAG}
+docker push mijndomein/docker-demo-api:latest
+docker push mijndomein/docker-demo-api:${TAG}

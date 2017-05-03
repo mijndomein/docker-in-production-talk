@@ -2,8 +2,8 @@
 
 # This script installs consul-template
 
-wget https://releases.hashicorp.com/consul-template/0.16.0/consul-template_0.16.0_linux_amd64.zip && \
-unzip consul-template_0.16.0_linux_amd64.zip && \
-rm consul-template_0.16.0_linux_amd64.zip && \
+wget https://releases.hashicorp.com/consul-template/0.18.0/consul-template_0.18.0_linux_amd64.zip && \
+unzip consul-template_0.18.0_linux_amd64.zip && \
+rm consul-template_0.18.0_linux_amd64.zip && \
 chmod a+x consul-template && \
 mv consul-template /usr/local/bin/

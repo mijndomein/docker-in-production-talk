@@ -5,4 +5,8 @@ COPY vendor/ /var/www/app/vendor
 COPY var/consul/config /etc/consul-template.conf.d
 COPY var/consul/template var/consul/template
 
-CMD /usr/local/bin/consul-template -config /etc/consul-template.conf.d -exec="apache2-foreground"
+RUN chown -R www-data:www-data /var/www/app/demo
+
+USER www-data
+
+CMD /usr/local/bin/consul-template -config /etc/consul-template.conf.d

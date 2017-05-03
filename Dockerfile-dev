@@ -1,3 +1,0 @@
-FROM mijndomein/docker-demo:base
-
-COPY vendor/ /var/www/app/vendor

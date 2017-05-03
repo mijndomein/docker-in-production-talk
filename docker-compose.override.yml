@@ -1,22 +1,22 @@
 version: '2'
 
 services:
-  docker-demo:
+  docker-demo-ui:
     volumes:
         - ./demo:/var/www/app/demo
     build:
       context: .
-      dockerfile: Dockerfile-dev
+      dockerfile: Dockerfile-ui
     ports:
-      - 3050:80
+      - 3050:8080
     labels:
       - "traefik.backend=demo"
-      - "traefik.port=80"
+      - "traefik.port=8080"
       - "traefik.frontend.rule=Host:demo.mijndomein.nl;"
 
   docker-demo-api:
     ports:
-      - 3051:80
+      - 3051:8080
     networks:
       default:
         aliases:

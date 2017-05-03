@@ -12,11 +12,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Mijndomein\\": "src/"
+            "Mijndomein\\Demo\\": "demo/"
         }
     },
     "require": {
         "guzzlehttp/guzzle": "^6.2",
+        "php-amqplib/php-amqplib": "^2.6",
         "silex/silex": "^2.0",
         "symfony/yaml": "^3.2",
         "twig/twig": "^1.30"

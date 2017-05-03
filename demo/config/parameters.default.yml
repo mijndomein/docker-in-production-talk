@@ -4,3 +4,11 @@ parameters:
   subTitle: demo
   dateApiService: http://date.service.dev
   healthy: true
+  rabbitMQ:
+    host:
+    port:
+    user:
+    pass:
+    vhost:
+    queue:
+    exchange:

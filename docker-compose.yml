@@ -9,13 +9,14 @@ services:
     labels:
       - "traefik.enable=false"
 
-  docker-demo:
+  docker-demo-ui:
     depends_on:
       - docker-demo-base
-    container_name: docker-demo
+    container_name: docker-demo-ui
     build:
       context: .
-    image: mijndomein/docker-demo:latest
+      dockerfile: Dockerfile-ui
+    image: mijndomein/docker-demo-ui:latest
 
   docker-demo-api:
     depends_on:
